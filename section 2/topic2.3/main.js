@@ -1,18 +1,33 @@
-const fs = require("fs");
+const fs = require('fs');
+const {readFile, writeFile} = require('fs');
 
-console.log("writing into existing file");
-fs.writeFile("input.txt", "Hello Hello node js", function (err) {
-	if (err) {
-		return console.error(err);
-	}
+// get files path
 
-	console.log("Data written successfully!");
-	console.log("Let's read newly written data");
+TestFilesPath=__dirname + '\\TestFiles\\';
 
-	fs.readFile("input.txt", function (err, data) {
-		if (err) {
-			return console.error(err);
-		}
-		console.log("Asynchronous read: " + data.toString());
-	});
-});
+console.log('================================');
+
+//====================== Read File 1 =====================
+ 
+console.log('Read File 1');
+console.log('Starting Read File 1......');
+
+readFile(TestFilesPath+'test1.txt','utf-8', function(err1, Data1){
+    if (err1){   console.log(err1);      
+    }else
+    {console.log('Data: \n' , Data1);}
+  });
+  
+console.log('Ending Read File 1......');
+console.log('================================');
+  
+ //===========================================================
+  
+console.log('Read File 2');
+console.log('Starting Read File 2......');
+readFile( TestFilesPath+'test2.txt' ,'utf-8',(err2, Data2)=>{
+    if (err2){   console.log(err2);      
+    }else{console.log('Data: \n' , Data2);}
+  });
+ console.log('Ending Read File 2......');
+console.log('================================');
