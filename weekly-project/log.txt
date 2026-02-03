@@ -1,0 +1,5 @@
+platform: win32
+ TotalMemory:16984182784
+ freeMemory:2624528384
+ 30c=86F
+ Area of 5*10=50
